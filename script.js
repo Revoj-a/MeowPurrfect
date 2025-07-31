@@ -28,6 +28,25 @@ form.addEventListener("submit", function (e) {
     catCard.remove();
   });
 
+  catCard.querySelector(".edit-btn").addEventListener("click", () => {
+    const nameHeading = catCard.querySelector("h3");
+    nameHeading.contentEditable = "true";
+    nameHeading.focus();
+
+    nameHeading.addEventListener("keydown", function handler(e) {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        nameHeading.contentEditable = "false";
+        nameHeading.removeEventListener("keydown", handler);
+      }
+    });
+
+    nameHeading.addEventListener("blur", function handler() {
+      nameHeading.contentEditable = "false";
+      nameHeading.removeEventListener("blur", handler);
+    });
+  });
+
   catContainer.appendChild(catCard);
 
   form.reset();
