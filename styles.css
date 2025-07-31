@@ -33,3 +33,12 @@ button.delete-btn {
   border-radius: 5px;
   cursor: pointer;
 }
+
+button.edit-btn {
+  background-color: #ff4444;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
